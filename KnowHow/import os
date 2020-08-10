@@ -1,0 +1,29 @@
+import os
+from datetime import datetime
+
+os.chdir('/Users/abelp/Desktop/IT-Projekt/Python/Test Dateien')                 #Chose directory
+os.makedirs('Erstellter Odner/Sub Ordner')              #Make new directory + sub-directory
+print(os.getcwd())                                      #Get current working directory
+print(os.listdir())                                     #Get everything in current directory
+os.removedirs('Erstellter Odner/Sub Ordner')            #Remove directory and sub-directory
+print(os.stat('Test Text.txt').st_size)                 #Get stats (here size)
+
+mod_time= os.stat('Test Text.txt').st_mtime             #Get time stap
+print(datetime.fromtimestamp(mod_time))                 #Convert to a readable form
+
+for dirpath, dirnames, filenames in os.walk('/Users/abelp/Desktop/IT-Projekt/Python/Test Dateien'):         #Show all files that contain that directory
+    print('Currentpath: ', dirpath)
+    print('Directories: ', dirnames)
+    print('Name: ', filenames)
+    print()
+
+print(os.environ)                                       #Show all avaible environs
+print(os.environ.get('APPDATA'))                        #Get path from environ
+
+pathname = (os.path.join(os.getcwd(), 'Test Text.txt'))         #Join two paths
+print(pathname)
+print(os.path.basename(pathname))                               #Basename give the last file from the path back
+print(os.path.split(pathname))                                  #Split 1.directoryname 2.basename
+print(os.path.exists(pathname))                                 #Check if Path exists
+print(os.path.isdir(pathname))                                  #Check if its a dir or not  same as 'isfile'
+print(os.path.splitext(pathname))                               #Split 1.root 2.the extention here .txt

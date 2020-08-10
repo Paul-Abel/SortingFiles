@@ -1,0 +1,8 @@
+import shutil
+import os
+
+shutil.copy(file, dest)                             #only copies files not directories, same files get overwritten
+shutil.move(file, dest)                             #can not move if this dest already contains that files
+
+full_dest = os.path.join(dest, filename)            #u can move and overwrite this way
+shutil.move(file, full_dest)

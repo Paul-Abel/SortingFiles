@@ -1,0 +1,82 @@
+f = open('/Users/abelp/Desktop/IT-Projekt/Python/Test Dateien/Test Text lesen.txt', 'r')  #öffnet einen File, default r
+                                                                                    # r=read, w=write, a=append, r+=read and write
+print(f.name)
+print(f.mode)           #show mode here = r
+f.close()               #we have always to close better with context manager
+
+with open('/Users/abelp/Desktop/IT-Projekt/Python/Test Dateien/Test Text lesen.txt', 'r') as f:   #open only in that block and close when block get leaved
+    f_contents = f.rf = open('/Users/abelp/Desktop/IT-Projekt/Python/Test Dateien/Test Text lesen.txt', 'r')  #öffnet einen File, default r
+                                                                                    # r=read, w=write, a=append, r+=read and write
+print(f.name)
+print(f.mode)           #show mode here = r
+f.close()               #we have always to close better with context manager
+
+with open('/Users/abelp/Desktop/IT-Projekt/Python/Test Dateien/Test Text lesen.txt', 'r') as f:   #open only in that block and close when block get leaved
+    f_contents = f.read()           #read like normal
+    f_contents = f.read(100)          #read the first 100 chars
+    f_contents = f.read(100)          #read the next 100 chars
+
+    size_to_read = 100
+    f_content = f.read(size_to_read)
+    while len(f_content) > 0:
+        print(f_content, end='')                #end='' shows how the print command should end, default is a new line
+        f_content = f.read(size_to_read)
+    print(f.tell())                             #shows the current position in the document
+    f.seek(50)                                  #set a new current position
+    for line in f:                   #read every line single--> not a memory problem with big files
+        print(line, end=' ')
+    f_contents = f.readline()       #read first line
+    f_contents = f.readline()       #read second line, everytime we use this the next line will get read
+
+
+    f_contents = f.readlines()      #read every line and take it into a list
+    print(f_contents)
+    pass
+with open('/Users/abelp/Desktop/IT-Projekt/Python/Test Dateien/Test Text schreiben.txt','w') as g:  #write do overwrite the existing file, append add it at the end
+    g.write('test')         #test
+    g.write('test')         #testtest
+    g.seek(0)               #set position to the beginning
+    g.write('TEST')         #Testtest
+
+with open('/Users/abelp/Desktop/IT-Projekt/Python/Test Dateien/Test Text schreiben.txt','r') as g:
+    print(g.read())
+
+
+with open('test.jpg' , 'rb') as f:                      #copy a file, rb & wb to read and write in Bytes not in chars (needed for jpg)
+    with open('test_copy.jpg', 'wb') as g:
+        for line in f:
+            g.write(line)
+ead()           #read like normal
+    f_contents = f.read(100)          #read the first 100 chars
+    f_contents = f.read(100)          #read the next 100 chars
+
+    size_to_read = 100
+    f_content = f.read(size_to_read)
+    while len(f_content) > 0:
+        print(f_content, end='')                #end='' shows how the print command should end, default is a new line
+        f_content = f.read(size_to_read)
+    print(f.tell())                             #shows the current position in the document
+    f.seek(50)                                  #set a new current position
+    for line in f:                   #read every line single--> not a memory problem with big files
+        print(line, end=' ')
+    f_contents = f.readline()       #read first line
+    f_contents = f.readline()       #read second line, everytime we use this the next line will get read
+
+
+    f_contents = f.readlines()      #read every line and take it into a list
+    print(f_contents)
+    pass
+with open('/Users/abelp/Desktop/IT-Projekt/Python/Test Dateien/Test Text schreiben.txt','w') as g:  #write do overwrite the existing file, append add it at the end
+    g.write('test')         #test
+    g.write('test')         #testtest
+    g.seek(0)               #set position to the beginning
+    g.write('TEST')         #Testtest
+
+with open('/Users/abelp/Desktop/IT-Projekt/Python/Test Dateien/Test Text schreiben.txt','r') as g:
+    print(g.read())
+
+
+with open('test.jpg' , 'rb') as f:                      #copy a file, rb & wb to read and write in Bytes not in chars (needed for jpg)
+    with open('test_copy.jpg', 'wb') as g:
+        for line in f:
+            g.write(line)
