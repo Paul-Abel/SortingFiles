@@ -1,0 +1,33 @@
+Window
+    root = Tk()                                     #create window
+    root.title('xyz')                               #puts a title in the program header
+
+General operations on label, button, input_fields
+    height, width
+    borderwidth
+    text                                            #content of the object
+    padx, pady                                      #high and width of the object
+    state                                           #disable, normal, active
+    g, bg                                           #foreground and background color
+
+Label
+    myLabel1 = Label(root, text="Hello World")      #Create Label
+
+Button
+    myButton = Button(root, text='Click me')
+    command                                         #start a method, but write it without '()'
+
+Input_Field
+    e = Entry(root, width'50')
+    e.get()                                         #get the content of the input_field
+    e.insert(0, 'Enter your name')                   #puts a default text in the input_field
+
+Push in Screen
+    object_name.pack()                              #Push it in the screen
+
+grid
+    object_name.grid(row='1', column='0')
+    row, column
+    rowspan, columnspan                             #Defines if it should be bigger than just one row/column
+
+root.mainloop()                                     #main loop where the gui get refreshed
